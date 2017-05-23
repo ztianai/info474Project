@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simpson's Paradox</title>
+
+    <!-- Libraries -->
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="http://d3js.org/d3.v4.min.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/scroll.css" />
+
+    <!-- your script file -->
+    <script src="js/BarChart.js"></script>
+    <script src="js/DonutChart.js"></script>
+    <script src="js/scroll.js"></script>
+    <script src="js/main.js"></script>
+</head>
+
+<body>
+    <div class="container" ng-app="myApp" id="app" ng-controller="MainController">
+        <h1>Simpson's Paradox</h1><br>
+        <div id="sandbox">
+            <div id='graphic'>
+                <div id='sections'>
+                    <section class="step" id="nograph">
+                        <div class="title">History of Paradox</div><br>
+                        <div class="descr">In 1951, a British statistician named Edward H. Simpson discovered a statistical phenomenon, which thereafter became known as Simpson’s Paradox. Other statisticians had mentioned similar effects earlier but Simpson was the first to truly describe this phenomenon in a technical paper. This paradox is used in statistics to illustrate the care that statisticians need to take when interpreting data because it can lead to false conclusions. Indeed, many statisticians believe that the mainstream public should be aware of the counter-intuitive results frequently found in statistics since statistics can shape public opinion. One of the best-known examples of Simpson's paradox is a study of gender bias among graduate school admissions to University of California, Berkeley. </div>
+                    </section>
+                    <section class="step">
+                        <div class="title">Overall Accpetance Rate</div><br>
+                        <div class="descr">In 1973, the University of California-Berkeley was sued for sex discrimination. Since they have just accepted 44% male applicants but only 35% of female applicant. However, was it really the case?</div>
+                    </section>
+                    <section class="step">
+                        <div class="title">Acceptance Rate for Department A</div><br>
+                        <div class="descr">When researchers looked into the data, they found that for department A, 62% male applicants got accpeted and 82% female applicants get accepted. Looking at this department, it seems that there is a favor in female applicants.</div>
+                    </section>
+                    <section class="step">
+                        <div class="title">Acceptance Rate for Department B</div><br>
+                        <div class="descr">Data from Department B showed similar thing. The department accepted 63% male applicants and 67% female applicants. Here again, we see that more female applicants got accepted. So was there really a sex discrimination? This is textbook case of Simpson's Paradox.</div>
+                    </section>
+                    <section class="step" id="nograph">
+                        <div class="title">What is Simpson’s Paradox?</div><br>
+                        <div class='descr'>What Simpson realized was that if you analyze some data sets in one way—first breaking them down by let’s say two variables and getting a specific result—and then analyze the same data sets by breaking them down further with a third variable, the results switch direction.
+
+In short, Simpson’s Paradox is a statistical phenomenon in which a trend appears in different groups of data but disappears or reverses when these groups are combined. And these results appear to be in direct contradiction to one another.</div>
+                        <!-- another section -->
+                    </section>
+                </div>
+                <div id='vis'>
+                </div>
+                <div id='vis2'></div>
+            </div>
+        </div>
+</body>
+
+</html>
