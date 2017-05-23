@@ -18,6 +18,8 @@ var DonutChart = function() {
 
 	var movement = 0;
 
+	var label = "";
+
 	var radius = width / 2;
 
 	var color = d3.scaleOrdinal(d3.schemeCategory10);
@@ -47,13 +49,23 @@ var DonutChart = function() {
 			var svgEnter = svg.enter()
 				.append('svg')
 				.attr('width', width)
-				.attr('height', height)
+				.attr('height', height + 50)
 				.attr('transform', 'translate(' + movement + ", 0)");
 
 
 			svgEnter.append('g')
 				.attr('transform', 'translate(' + width/2 + "," + height/2 + ")")
 				.attr('class', 'arc');
+
+			console.log(label);
+
+			svgEnter.append('g').append('text')
+				.attr('class', 'titleLabel');
+
+			svg.select('.titleLabel')
+				.attr('transform', 'translate(' + (width/2 - 50) + "," + (height + 15) + ")")
+				.text(label);
+
 
 
 			var path = ele.select('.arc').selectAll('path').data(pie(data));
@@ -141,6 +153,12 @@ var DonutChart = function() {
 		})
 
 	}
+
+	chart.label = function(l) {
+		if (!arguments.length) return label;
+		label = l;
+		return chart;
+	};
 
 	chart.height = function(h) {
 		if (!arguments.length) return height;

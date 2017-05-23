@@ -31,6 +31,9 @@ $(function() {
                 data = [];
 
                 data2 = [];
+
+                myChart.label("");
+                myChart2.label("");
                 break;
             case 1:
                 data = [{
@@ -48,6 +51,8 @@ $(function() {
                     id: 'Accepeted',
                     count: 35
                 }];
+                myChart.label("Men Applicants");
+                myChart2.label("Women Applicants");
                 // myChart.xAxisLabel('Men students for Department A');
                 // myChart2.xAxisLabel('Women students for Department A');
                 // var fillColor = 'red';
@@ -68,6 +73,8 @@ $(function() {
                     id: 'Accepeted',
                     count: 82
                 }];
+                myChart.label("Men Applicants");
+                myChart2.label("Women Applicants");
                 // var fillColor = 'orange';
                 break;
             case 3:
@@ -86,11 +93,15 @@ $(function() {
                     id: 'Accepeted',
                     count: 67
                 }];
+                myChart.label("Men Applicants");
+                myChart2.label("Women Applicants");
                 break;
             case 4:
                 data = [];
 
                 data2 = [];
+                myChart.label("");
+                myChart2.label("");
                 break;
             default:
                 // var fillColor = 'black';
