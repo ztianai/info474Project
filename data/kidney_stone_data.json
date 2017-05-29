@@ -1,0 +1,38 @@
+[
+	{
+		"treatment": "A",
+		"Small Stones": {
+			"success": 81,
+			"fail": 6,
+			"total": 87
+		},
+		"Large Stone": {
+			"success": 192,
+			"fail": 71,
+			"total": 263
+		},
+		"Combined": {
+			"success": 273,
+			"fail": 77,
+			"total": 350
+		}
+	},
+	{
+		"treatment": "B",
+		"Small Stones": {
+			"success": 234,
+			"fail": 36,
+			"total": 270
+		},
+		"Large Stones": {
+			"success": 55,
+			"fail": 25,
+			"total": 80
+		},
+		"Combined": {
+			"success": 289,
+			"fail": 61,
+			"total": 350
+		}
+	}
+]
