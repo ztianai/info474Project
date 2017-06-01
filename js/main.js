@@ -3,6 +3,8 @@ var data = [];
 
 var data2 = [];
 
+var filteredData;
+
 $(function() {
     // Instantiate your chart with given settings
     var myChart = DonutChart()
@@ -13,7 +15,7 @@ $(function() {
 
     // Build chart
     var chart = d3.select('#vis')
-        .datum(data)
+        .datum([data])
         .call(myChart);
 
     var myChart2= DonutChart()
@@ -24,6 +26,29 @@ $(function() {
     var chart2 = d3.select('#vis2')
         .datum(data2)
         .call(myChart2);
+
+
+    d3.csv('data/kidney_stone_data.csv', function(d, i, columns) {
+        for (i = 2, t = 0; i < columns.length; ++i) t += d[columns[i]] = +d[columns[i]];
+            d.total = t;
+        return d;
+    }, function(error, data) {
+        console.log(data);
+
+        filteredData = data.filter(function(d) { 
+            return (d.Treatment == 'A') && (d.Case != 'Combined'); 
+        });
+
+        console.log(filteredData);
+        var myChart3 = StackedBarChart();
+
+        var chart3 = d3.select('#vis3')
+            .datum(filteredData)
+            .call(myChart3);
+    });
+        
+
+    
 
     var update = function(index) {
         switch (index) {
