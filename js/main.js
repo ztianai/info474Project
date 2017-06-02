@@ -187,7 +187,7 @@ $(function() {
 
                 data2 = [];
                 d3.csv('data/kidney_stone_data.csv', function(d, i, columns) {
-                     for (i = 2, t = 0; i < columns.length; ++i) t += d[columns[i]] = +d[columns[i]];
+                     for (i = 2, t = 0; i < columns.length - 1; ++i) t += d[columns[i]] = +d[columns[i]];
                          d.total = t;
                      return d;
                  }, function(error, data) {
@@ -206,6 +206,7 @@ $(function() {
              
                       // var chart4 = d3.select('#vis4')
 
+                      myChart4 = StackedBarChart();
                        myChart4.caseType('Treatment');
                          chart4.datum(filteredData1)
                          .call(myChart4);
@@ -222,7 +223,7 @@ $(function() {
 
                 data2 = [];
                 d3.csv('data/kidney_stone_data.csv', function(d, i, columns) {
-                     for (i = 2, t = 0; i < columns.length; ++i) t += d[columns[i]] = +d[columns[i]];
+                     for (i = 2, t = 0; i < columns.length - 1; ++i) t += d[columns[i]] = +d[columns[i]];
                          d.total = t;
                      return d;
                  }, function(error, data) {
@@ -235,7 +236,7 @@ $(function() {
                      });
              
                      console.log(filteredData1);
-             
+                        myChart4 = StackedBarChart();
                          myChart4.caseType('Treatment');
                          chart4.datum(filteredData1)
                          .call(myChart4);
@@ -251,7 +252,7 @@ $(function() {
 
                 data2 = [];
                 d3.csv('data/kidney_stone_data.csv', function(d, i, columns) {
-                     for (i = 2, t = 0; i < columns.length; ++i) t += d[columns[i]] = +d[columns[i]];
+                     for (i = 2, t = 0; i < columns.length - 1; ++i) t += d[columns[i]] = +d[columns[i]];
                          d.total = t;
                      return d;
                  }, function(error, data) {
@@ -265,7 +266,7 @@ $(function() {
              
                      console.log(filteredData1);
              
-
+                        myChart4 = StackedBarChart();
                          myChart4.caseType('Treatment');
 
                       // var chart4 = d3.select('#vis4')
@@ -285,7 +286,7 @@ $(function() {
 
                 data2 = [];
                 d3.csv('data/kidney_stone_data.csv', function(d, i, columns) {
-                     for (i = 2, t = 0; i < columns.length; ++i) t += d[columns[i]] = +d[columns[i]];
+                     for (i = 2, t = 0; i < columns.length - 1; ++i) t += d[columns[i]] = +d[columns[i]];
                          d.total = t;
                      return d;
                  }, function(error, data) {
@@ -297,7 +298,7 @@ $(function() {
                      });
              
                      console.log(filteredData1);
-             
+                        myChart4 = StackedBarChart();
                          myChart4.caseType('Case');
                          chart4.datum(filteredData1)
                          .call(myChart4);
@@ -313,7 +314,7 @@ $(function() {
 
                 data2 = [];
                 d3.csv('data/kidney_stone_data.csv', function(d, i, columns) {
-                     for (i = 2, t = 0; i < columns.length; ++i) t += d[columns[i]] = +d[columns[i]];
+                     for (i = 2, t = 0; i < columns.length - 1; ++i) t += d[columns[i]] = +d[columns[i]];
                          d.total = t;
                      return d;
                  }, function(error, data) {
@@ -325,7 +326,7 @@ $(function() {
                      });
              
                      console.log(filteredData1);
-             
+                    myChart4 = StackedBarChart();
                          myChart4.caseType('Case');
                          chart4.datum(filteredData1)
                          .call(myChart4);
