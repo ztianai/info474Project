@@ -109,7 +109,7 @@ var DonutChart = function() {
 					return 'translate(' + labelArc.centroid(d) + ')';
 				})
 				.attr('dy', '.35em')
-				.text(function(d) {return d.data.id;});
+				.text(function(d) {return d.data.count +"% "+ d.data.id;});
 
 			function pieTween(b){
 				b.innerRadius = 0;

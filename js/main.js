@@ -89,7 +89,6 @@ $(function() {
 
                 myChart.label("");
                 myChart2.label("");
-                document.getElementById('vis3').style.display = "none";
                 document.getElementById('vis4').style.display = "none";
 
 
@@ -114,7 +113,8 @@ $(function() {
                 // filteredData = [];
                 myChart.label("Men Applicants");
                 myChart2.label("Women Applicants");
-                document.getElementById('vis3').style.display = "none";
+                document.getElementById('vis4').style.display = "none";
+
 
                 // myChart.xAxisLabel('Men students for Department A');
                 // myChart2.xAxisLabel('Women students for Department A');
@@ -139,7 +139,6 @@ $(function() {
                 // filteredData = [];
                 myChart.label("Men Applicants");
                 myChart2.label("Women Applicants");
-                document.getElementById('vis3').style.display = "none";
                 document.getElementById('vis4').style.display = "none";
 
                 // var fillColor = 'orange';
@@ -163,23 +162,29 @@ $(function() {
                 // filteredData = [];
                 myChart.label("Men Applicants");
                 myChart2.label("Women Applicants");
-                document.getElementById('vis3').style.display = "none";
                 document.getElementById('vis4').style.display = "none";
 
                 break;
-            case 4:
+            // case 4:
                
-                data1 = [];
+            //     data1 = [];
 
-                data2 = [];
+            //     data2 = [];
 
-                myChart.label("");
-                myChart2.label("");
-                document.getElementById('vis3').style.display = "none";
-                document.getElementById('vis4').style.display = "none";
+            //     myChart.label("");
+            //     myChart2.label("");
+            //     document.getElementById('vis4').style.display = "none";
 
-                break;
-            case 5:
+            //     break;
+            // case 5:
+            //     data1 = [];
+            //     data2 = [];
+
+            //     myChart.label("");
+            //     myChart2.label("");
+            //     document.getElementById('vis4').style.display = "none";
+
+            case 6:
                
                 data1 = [];
 
@@ -193,8 +198,9 @@ $(function() {
                      console.log(data);
              
                      var filteredData1 = data.filter(function(d) { 
-                         return (d.Treatment == 'B') && (d.Case != 'Combined'); 
-                        return d.Case == 'Small Stones'; 
+                         // return (d.Treatment == 'B') && (d.Case != 'Combined'); 
+                        // return d.Case == 'Small Stones'; 
+                        return d.Case =='Combined';
 
                      });
              
@@ -202,7 +208,7 @@ $(function() {
                       // var myChart4 = StackedBarChart();
              
                       // var chart4 = d3.select('#vis4')
-                        myChart4.caseType('Case');
+                       myChart4.caseType('Treatment');
                          chart4.datum(filteredData1)
                          .call(myChart4);
                  });
@@ -212,7 +218,36 @@ $(function() {
                 document.getElementById('vis3').style.display = "none";
 
                 break;
-            case 6:
+            case 7:
+               
+                data1 = [];
+
+                data2 = [];
+                d3.csv('data/kidney_stone_data.csv', function(d, i, columns) {
+                     for (i = 2, t = 0; i < columns.length; ++i) t += d[columns[i]] = +d[columns[i]];
+                         d.total = t;
+                     return d;
+                 }, function(error, data) {
+                    console.log("hi");
+                     console.log(data);
+             
+                     var filteredData1 = data.filter(function(d) { 
+                         // return (d.Treatment == 'A') && (d.Case != 'Combined'); 
+                         return d.Case == 'Small Stones';
+                     });
+             
+                     console.log(filteredData1);
+             
+                         myChart4.caseType('Treatment');
+                         chart4.datum(filteredData1)
+                         .call(myChart4);
+                 });
+
+                document.getElementById('vis4').style.display = "inline-block";
+
+
+                break;
+            case 8:
                
                 data1 = [];
 
@@ -231,17 +266,69 @@ $(function() {
                      });
              
                      console.log(filteredData1);
-                      // var myChart4 = StackedBarChart();
              
-                      // var chart4 = d3.select('#vis4')
                          myChart4.caseType('Treatment');
                          chart4.datum(filteredData1)
                          .call(myChart4);
                  });
-                // myChart.label("");
-                // myChart2.label("");
+
                 document.getElementById('vis4').style.display = "inline-block";
-                // document.getElementById('vis4').style.display = "none";
+
+
+                break;
+            case 9:
+               
+                data1 = [];
+
+                data2 = [];
+                d3.csv('data/kidney_stone_data.csv', function(d, i, columns) {
+                     for (i = 2, t = 0; i < columns.length; ++i) t += d[columns[i]] = +d[columns[i]];
+                         d.total = t;
+                     return d;
+                 }, function(error, data) {
+                    console.log("hi");
+                     console.log(data);
+             
+                     var filteredData1 = data.filter(function(d) { 
+                         return (d.Treatment == 'A') && (d.Case != 'Combined'); 
+                     });
+             
+                     console.log(filteredData1);
+             
+                         myChart4.caseType('Case');
+                         chart4.datum(filteredData1)
+                         .call(myChart4);
+                 });
+
+                document.getElementById('vis4').style.display = "inline-block";
+
+
+                break;
+            case 10:
+               
+                data1 = [];
+
+                data2 = [];
+                d3.csv('data/kidney_stone_data.csv', function(d, i, columns) {
+                     for (i = 2, t = 0; i < columns.length; ++i) t += d[columns[i]] = +d[columns[i]];
+                         d.total = t;
+                     return d;
+                 }, function(error, data) {
+                    console.log("hi");
+                     console.log(data);
+             
+                     var filteredData1 = data.filter(function(d) { 
+                         return (d.Treatment == 'B') && (d.Case != 'Combined'); 
+                     });
+             
+                     console.log(filteredData1);
+             
+                         myChart4.caseType('Case');
+                         chart4.datum(filteredData1)
+                         .call(myChart4);
+                 });
+
+                document.getElementById('vis4').style.display = "inline-block";
 
 
                 break;
@@ -252,6 +339,7 @@ $(function() {
                 data2 = [];
                 myChart.label("");
                 myChart2.label("");
+                document.getElementById('vis4').style.display = "none";
                 break;
         }
         // myChart.fillColor(fillColor);
