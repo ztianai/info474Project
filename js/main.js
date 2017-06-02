@@ -3,8 +3,6 @@ var data1 = [];
 
 var data2 = [];
 
-var filteredData;
-
 $(function() {
     // Instantiate your chart with given settings
     var myChart = DonutChart()
@@ -77,7 +75,6 @@ $(function() {
         
 
     
-
     var update = function(index) {
         switch (index) {
             case 0:
@@ -208,6 +205,7 @@ $(function() {
                       // var myChart4 = StackedBarChart();
              
                       // var chart4 = d3.select('#vis4')
+
                        myChart4.caseType('Treatment');
                          chart4.datum(filteredData1)
                          .call(myChart4);
@@ -267,7 +265,12 @@ $(function() {
              
                      console.log(filteredData1);
              
+
                          myChart4.caseType('Treatment');
+
+                      // var chart4 = d3.select('#vis4')
+                         // myChart4.caseType('Treatment').xAxisTitle(' ');    /******* plase edit here! ******/
+
                          chart4.datum(filteredData1)
                          .call(myChart4);
                  });

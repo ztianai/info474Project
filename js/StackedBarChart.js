@@ -14,6 +14,7 @@ var StackedBarChart = function() {
 		drawHeight = height - margin.top - margin.bottom;
 
 	var caseType = 'Case';
+	var xAxisTitle = 'Treatment';
 
 	var chart = function(selection) {
 		selection.each(function(data) {
@@ -61,7 +62,7 @@ var StackedBarChart = function() {
 				.attr('transform', 'translate(' + (margin.left + drawWidth / 2) + ',' + (drawHeight + margin.top + 40) + ')')
 				.attr('font-weight', 'bold')
 				.attr('font-size', 11)
-				.text('Year');
+				.text(xAxisTitle);
 
 			var yAxisText = svgEnter.append('text')
 				.attr('transform', 'translate(' + margin.left + ',' + (margin.top - 10) + ')')
@@ -188,6 +189,30 @@ var StackedBarChart = function() {
 			  .style('fill', "#fff");
 
 
+			console.log(data);
+			var yTextPadding = 40;
+			var bartext = svgEnter.selectAll('.bartext').data(data);
+
+			bartext.enter()
+				.append("text")
+				.attr("class", "bartext")
+				.attr("text-anchor", "middle")
+				.attr("fill", "white")
+				.attr("x", function(d, i) {
+				    console.log(xScale.bandwidth());
+				    return xScale.bandwidth() * i + xScale.bandwidth();
+				})
+				.attr("y", function(d) {
+					console.log(d.Success);
+				    return yScale(d.Success)+yTextPadding;
+				})
+				.text(function(d){
+				     return d.Success;
+				});
+			bartext.exit().remove();
+
+
+
 		})
 	}
 
@@ -208,7 +233,13 @@ var StackedBarChart = function() {
 		if(!arguments.length) return caseType;
 		caseType = val;
 		return chart;	
-	}
+	};
+
+	chart.xAxisTitle = function(val) {
+		if(!arguments.length) return xAxisTitle;
+		xAxisTitle = val;
+		return chart;
+	};
 
 
 
