@@ -11,10 +11,10 @@ var DonutChart = function() {
 	};
 
 	var tooltipFont = 20,
-		tooltipLeft = 140,
-		tooltipTop = 200,
+		tooltipLeft = 580,
+		tooltipTop = 100,
 		tooltipPadding = 10,
-		tooltipWidth = 200;
+		tooltipWidth = 150;
 
 	var movement = 0;
 
@@ -83,7 +83,7 @@ var DonutChart = function() {
 					}))
 
 					var percent = Math.round(1000 * d.data.count / total) / 10;
-					tooltip.select('.label').html(d.data.id);
+					tooltip.select('.labels').html(d.data.id);
 					tooltip.select('.count').html(d.data.count);
 					tooltip.select('.percent').html(percent + '%');
 					tooltip.style('display', 'block');
@@ -121,7 +121,7 @@ var DonutChart = function() {
 
 			var tooltip = d3.select(this)
 				.append('div')
-				.attr('class', 'tooltip')
+				.attr('class', 'tooltips')
 				.style('background', '#eee')
 				.style('box-shadow', '0 0 5px #999999')
 				.style('color', '#333')
@@ -135,7 +135,7 @@ var DonutChart = function() {
 				.style('position', 'absolute');
 
 			tooltip.append('div')
-				.attr('class', 'label');
+				.attr('class', 'labels');
 
 			tooltip.append('div')
 				.attr('class', 'count');

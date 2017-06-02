@@ -10,9 +10,10 @@
     <script src="https://code.jquery.com/jquery.min.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <!-- // <script src="http://d3js.org/d3.v4.min.js"></script> -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.8.0/d3.min.js"></script>    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.7.4/d3.js"></script>
+     <script src="http://d3js.org/d3.v4.min.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.8.0/d3.min.js"></script> -->   
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.7.4/d3.js"></script>-->
+
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/main.css" />
@@ -38,15 +39,15 @@
                     </section>
                     <section class="step">
                         <div class="title">Overall Accpetance Rate</div><br>
-                        <div class="descr">In 1973, the University of California-Berkeley was sued for sex discrimination. Since they have just accepted 44% male applicants but only 35% of female applicant. However, was it really the case?</div>
+                        <div class="descr">In 1973, the University of California-Berkeley was sued for gender discrimination in graduate school admissions. At the surface level it appeared to be discrimination against women because they accepted 44% of male applicants but only 35% of female applicants. But, was this really the case?</div>
                     </section>
                     <section class="step">
                         <div class="title">Acceptance Rate for Department A</div><br>
-                        <div class="descr">When researchers looked into the data, they found that for department A, 62% male applicants got accpeted and 82% female applicants get accepted. Looking at this department, it seems that there is a favor in female applicants.</div>
+                        <div class="descr">When researchers looked into the data, they found that for department A, 62% of male applicants were accepted and 82% of female applicants were accepted. So for department A it seemed as if the admissions office favored female applicants.</div>
                     </section>
                     <section class="step">
                         <div class="title">Acceptance Rate for Department B</div><br>
-                        <div class="descr">Data from Department B showed similar thing. The department accepted 63% male applicants and 67% female applicants. Here again, we see that more female applicants got accepted. So was there really a sex discrimination? This is textbook case of Simpson's Paradox.</div>
+                        <div class="descr">Data from department B showed similar results. The department accepted 63% of male applicants and 67% of female applicants. So maybe there wasn’t any gender discrimination after all. This is a textbook case of Simpson’s Paradox. </div>
                     </section>
                     <section class="step" id="nograph">
                         <div class="title">What is Simpson’s Paradox?</div><br>
@@ -55,10 +56,46 @@
 In short, Simpson’s Paradox is a statistical phenomenon in which a trend appears in different groups of data but disappears or reverses when these groups are combined. And these results appear to be in direct contradiction to one another.</div>
                         <!-- another section -->
                     </section>
+                    <section class="step">
+                        <div class="title">How Does it Work Exactly?
+</div><br>
+                        <div class="descr">We’ll break down this concept by using an example that is from a real-life medical study comparing the success rate of two treatments for kidney stones. First, imagine that you are the patient in this scenario and you know that you have a kidney stone. </div>
+                    </section>
+                    <section class="step">
+                        <!-- <div class="title">Acceptance Rate for Department B</div><br> -->
+                        <div class="descr">In this case, there are two treatments offered: treatment A and B. Treatment A is more complicated and requires surgical procedures, whereas treatment B only involves a small puncture and is simple. If you take a look to the right, you can see that overall treatment B has a higher success rate of 83% compared to treatment A’s 78%. Which treatment would you choose based on this information? </div>
+                    </section>
+                    <section class="step">
+                        <!-- <div class="title">Acceptance Rate for Department B</div><br> -->
+                        <div class="descr">Now, you might think that the obvious choice here is treatment B. But if you dig a little deeper into the data, you’ll find that the success rate of treatment A is much higher when you examine the number of cases for small and big kidney stones. 
+</div>
+                    </section>
+                    <section class="step">
+                        <!-- <div class="title">Acceptance Rate for Department B</div><br> -->
+                        <div class="descr">Researchers involved in this study found it puzzling that treatment B appeared more effective when both stone sizes were averaged together but treatment A was more effective when compared at the level where both small and large kidney stones were identified. Much like what Simpson described, the first examination of the data here is based on a certain set of variables (treatment A versus B) but when the data broken down further with more variables (treatment A versus B and both kidney stone sizes) the trend is reversed.</div>
+                    </section>
+                    <section class="step">
+                        <!-- <div class="title">Acceptance Rate for Department B</div><br> -->
+                        <div class="descr">In this case, there are two treatments offered: treatment A and B. Treatment A is more complicated and requires surgical procedures, whereas treatment B only involves a small puncture and is simple. If you take a look to the right, you can see that overall treatment B has a higher success rate of 83% compared to treatment A’s 78%. Which treatment would you choose based on this information? </div>
+                    </section>
+                    <section class="step">
+                        <!-- <div class="title">Acceptance Rate for Department B</div><br> -->
+                        <div class="descr">So why does this happen? The underlying cause for this puzzling trend in the data was due to a “lurking” variable (also sometimes referred to as a confounding variable). In this situation the lurking variable was the severity of the case combined with the volume of patients treated (or cases). This was represented by the doctors’ decision trend of favoring treatment B for less severe cases. </div>
+                    </section>
+                    <section class="step">
+                        <!-- <div class="title">Acceptance Rate for Department B</div><br> -->
+                        <div class="descr">In addition to the lurking variable, it was found that doctors tend to give the severe cases (large stones) the better treatment (A) and the milder cases (small stones) the inferior treatment B. Therefore, the totals were dominated by the larger ratios (192/163 and 234/270) associated with either treatment—and this is where the root cause behind the paradox comes in. The reversal of the trend between data sets’ ratios occurs when highly different sizes of data groups are combined (and the lurking variable is ignored).</div>
+                    </section>
+                    <section class="step">
+                        <!-- <div class="title">Acceptance Rate for Department B</div><br> -->
+                        <div class="descr">Overall, the success rates were more strongly influenced by the severity of the case than by the choice of treatment. As a result, patients with large stones using treatment A were worse off than the group of patients with small stones (even if the latter used the inferior treatment B).<br><br>In the end, treatment A is still the better treatment but when treatment B is applied more frequently to less severe cases it can appear to be more effective.
+</div>
+                    </section>
                 </div>
                 <div id='vis'></div>
                 <div id='vis2'></div>
                 <div id='vis3'></div>
+                <div id='vis4'></div>
             </div>
         </div>
 </body>

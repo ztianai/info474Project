@@ -35,6 +35,26 @@
   width: 300px;
 }
 
+#vis3 {
+  display: inline-block;
+  position: fixed;
+  /*top: 60px;*/
+  z-index: 1;
+  margin-left: 0;
+  height: 300px;
+  width: 300px;
+}
+
+#vis4 {
+  display: inline-block;
+  position: fixed;
+  /*top: 60px;*/
+  z-index: 1;
+  margin-left: 0;
+  height: 300px;
+  width: 300px;
+}
+
 .step:last-child {
   margin-bottom:calc(100vh - 100px);
 }

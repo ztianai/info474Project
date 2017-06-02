@@ -1,0 +1,7 @@
+Treatment,Case,Success,Fail,Rate
+A,Small Stones,163,12,93.1
+A,Large Stones,127,48,73.0
+A,Combined,290,60,82.9
+B,Small Stones,150,25,86.7
+B,Large Stones,120,55,68.8
+B,Combined,270,80,77.1
