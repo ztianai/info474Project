@@ -147,7 +147,7 @@ var StackedBarChart = function() {
 				    var yPosition = d3.mouse(this)[1];
 				    console.log(d.data);
 				    tooltip.attr("transform", "translate(" + (xPosition + 120) + "," + (yPosition-50) + ")");
-				    tooltip.selectAll("text").text("Fail Cases: " + d.data.Fail)
+				    tooltip.select("text").text("Fail Cases: " + d.data.Fail)
 				    	.append('tspan').text("Success Cases: " + d.data.Success)
 				    	.attr('y', 20)
 				    	.attr('x', 19)
