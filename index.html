@@ -59,7 +59,7 @@ In short, Simpson’s Paradox is a statistical phenomenon in which a trend appea
                     <section class="step" id="nograph">
                         <div class="title">How Does it Work Exactly?
 </div><br>
-                        <div class="descr">We’ll break down this concept by using an example that is from a real-life medical study comparing the <b>success rate of two treatments for kidney stones</b>. First, imagine that you are the patient in this scenario and you know that you have a kidney stone. </div>
+                        <div class="descr">We’ll break down this concept by using an example that is from a real-life medical study comparing the <b>success rate of two treatments for kidney stones</b>. First, imagine that you are the patient in this scenario and you know that you have a kidney stone. <br><br>For the graph below, <span id='purple'><b>purple bars</b></span> mean success cases and <span id="grey"><b>grey bars</b></span> mean fail cases.</div>
                     </section>
                     <section class="step">
                         <!-- <div class="title">Acceptance Rate for Department B</div><br> -->
@@ -67,28 +67,33 @@ In short, Simpson’s Paradox is a statistical phenomenon in which a trend appea
                     </section>
                     <section class="step">
                         <!-- <div class="title">Acceptance Rate for Department B</div><br> -->
-                        <div class="descr">Now, you might think that the obvious choice is <b>Treatment B</b>, since it has a higher rate. <br><br>But if you dig a little deeper into the data, you’ll find that for small kidney stones, the success rate of <b>Treatment A is 93.1%</b> (81 success cases out of 87 patients) and the success rate of <b>Treatment B is 86.7%</b> (234 success cases out of 270 patients). <br><br><em>Which treatment would you choose now?</em> 
+                        <div class="descr">Now, you might think that the obvious choice is <b>Treatment B</b>, since it has a higher rate. <br><br>But if you dig a little deeper into the data, you’ll find that for <b>small kidney stones</b>, the success rate of <b>Treatment A is 93.1%</b> (81 success cases out of 87 patients) and the success rate of <b>Treatment B is 86.7%</b> (234 success cases out of 270 patients). <br><br><em>Which treatment would you choose now?</em> 
 </div>
                     </section>
                     <section class="step">
                         <!-- <div class="title">Acceptance Rate for Department B</div><br> -->
-                        <div class="descr">Researchers involved in this study found it puzzling that treatment B appeared more effective when both stone sizes were averaged together but treatment A was more effective when compared at the level where both small and large kidney stones were identified. Much like what Simpson described, the first examination of the data here is based on a certain set of variables (treatment A versus B) but when the data broken down further with more variables (treatment A versus B and both kidney stone sizes) the trend is reversed.</div>
+                        <div class="descr">You might think Treatment A is better for small kidney stones. <br><br> Let's take a look at the breakdown for <b>large kidney stone</b>. The rate of <b>Treatment A is 73%</b> (192 success cases out of 268 patients) and the success rate of <b>Treatment B is 68.8%</b> (55 success cases out of 80 patients). <br><br> <b>Treatment A here still has a higher success rate for large kidney stone.</b></div>
                     </section>
                     <section class="step">
                         <!-- <div class="title">Acceptance Rate for Department B</div><br> -->
-                        <div class="descr">In this case, there are two treatments offered: treatment A and B. Treatment A is more complicated and requires surgical procedures, whereas treatment B only involves a small puncture and is simple. If you take a look to the right, you can see that overall treatment B has a higher success rate of 83% compared to treatment A’s 78%. Which treatment would you choose based on this information? </div>
+                        <div class="descr">So why does this happen? The underlying cause for this puzzling trend in the data was due to <b>a “lurking” variable </b>(also sometimes referred to as a confounding variable). In this situation the lurking variable was the <b>severity of the case</b> combined with the <b>volume of patients treated </b>(or cases). This was represented by the doctors’ decision trend of favoring treatment B for less severe cases.  <br><br>On the right you can see that for Treatment B there were total <b>270 small kidney stone patients</b> while there were only <b>80 large kidney stone patients</b>.</div>
                     </section>
                     <section class="step">
                         <!-- <div class="title">Acceptance Rate for Department B</div><br> -->
-                        <div class="descr">So why does this happen? The underlying cause for this puzzling trend in the data was due to a “lurking” variable (also sometimes referred to as a confounding variable). In this situation the lurking variable was the severity of the case combined with the volume of patients treated (or cases). This was represented by the doctors’ decision trend of favoring treatment B for less severe cases. </div>
+                        <div class="descr">On the other hand, Treatment A got more severe cases. There were only <b>87 small kidney stone cases</b> and <b>263 large kidney stone patients</b>. <br><br>The reversal of the trend between data sets’ ratios occurs when <b>highly different sizes of data groups are combined and the lurking variable is ignored</b>.</div>
                     </section>
                     <section class="step">
                         <!-- <div class="title">Acceptance Rate for Department B</div><br> -->
-                        <div class="descr">In addition to the lurking variable, it was found that doctors tend to give the severe cases (large stones) the better treatment (A) and the milder cases (small stones) the inferior treatment B. Therefore, the totals were dominated by the larger ratios (192/163 and 234/270) associated with either treatment—and this is where the root cause behind the paradox comes in. The reversal of the trend between data sets’ ratios occurs when highly different sizes of data groups are combined (and the lurking variable is ignored).</div>
+                        <div class="descr">Overall, the success rates were more strongly influenced by the severity of the case than by the choice of treatment. As a result, patients with large stones using treatment A were worse off than the group of patients with small stones (even if the latter used the inferior treatment B).
+
+In the end, treatment A is still the better treatment but when treatment B is applied more frequently to less severe cases it can appear to be more effective.
+<br><br>So if the researchers did <b>separate the patients evenly between different treatments for different severity</b>, we can see that <b>Treatment A will have a higher success rate of 82.9%</b> and <b>Treatment B will only have a success rate of 77.1%.</b></div>
                     </section>
-                    <section class="step">
-                        <!-- <div class="title">Acceptance Rate for Department B</div><br> -->
-                        <div class="descr">Overall, the success rates were more strongly influenced by the severity of the case than by the choice of treatment. As a result, patients with large stones using treatment A were worse off than the group of patients with small stones (even if the latter used the inferior treatment B).<br><br>In the end, treatment A is still the better treatment but when treatment B is applied more frequently to less severe cases it can appear to be more effective.
+                    <section class="step" id="nograph">
+                        <div class="title">Conclusion</div><br>
+                        <div class="descr">It’s important to be aware of Simpson’s Paradox because this phenomenon is surprisingly common and comes up in things such as the news or academic studies, and therefore can misinform the public. By having a basic understanding of what the paradox is, one can think more critically about statistics being presented to them and can correct whatever misconceptions may arise from the data. <br><br>
+
+You can avoid Simpson’s Paradox by making sure that obvious lurking variables are included in a study; that way, when you look at the data you get the relationships right the first time, and no room exists for misconstruing the results.
 </div>
                     </section>
                 </div>

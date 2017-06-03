@@ -7,13 +7,14 @@ var StackedBarChart = function() {
 			top: 20,
 			bottom: 100,
 			left: 120,
-			right: 20,
+			right: 120,
 		},
 		inputHeight = 20,
 		drawWidth = width - margin.left - margin.right,
 		drawHeight = height - margin.top - margin.bottom;
 
 	var caseType;
+	var label;
 	// var xAxisTitle;
 
 	var chart = function(selection) {
@@ -77,10 +78,10 @@ var StackedBarChart = function() {
 
 			var xAxisText = svgEnter.append('text')
 				.attr('class', 'title x')
-				.attr('transform', 'translate(' + (margin.left + drawWidth / 2) + ',' + (drawHeight + margin.top + 40) + ')')
+				.attr('transform', 'translate(' + (margin.left + drawWidth / 2) + ',' + (drawHeight + margin.top + 50) + ')')
 				.attr('font-weight', 'bold')
-				.attr('font-size', 11)
-				.text(caseType);
+				.attr('font-size', 8)
+				.text(label);
 
 			var yAxisText = svgEnter.append('text')
 				.attr('transform', 'translate(' + margin.left + ',' + (margin.top - 10) + ')');
@@ -114,7 +115,7 @@ var StackedBarChart = function() {
 				element.select('.axis.x').transition().duration(1000).call(xAxis);
 				// element.select('.axis.y').transition().duration(1000).call(yAxis);
 
-				element.select('.title.x').text(caseType);
+				element.select('.title.x').text(label);
 
 
 				yAxisText.attr('x', 2)
@@ -188,25 +189,25 @@ var StackedBarChart = function() {
 
 				// console.log(data);
 				var yTextPadding = 40;
-				var bartext = element.select('.graphLayer').selectAll('text').data(data);
+				// var bartext = element.select('.graphLayer').selectAll('text').data(data);
 
-				bartext.enter()
-					.append("text")
-					.attr("class", "bartext")
-					.attr("text-anchor", "middle")
-					.attr("fill", "white")
-					.attr("x", function(d, i) {
-					    console.log(xScale.bandwidth());
-					    return xScale.bandwidth() * i + xScale.bandwidth();
-					})
-					.attr("y", function(d) {
-						console.log(d.Success);
-					    return yScale(d.Success)+yTextPadding;
-					})
-					.text(function(d){
-					     return d.Success;
-					});
-				bartext.exit().remove();
+				// bartext.enter()
+				// 	.append("text")
+				// 	.attr("class", "bartext")
+				// 	.attr("text-anchor", "middle")
+				// 	.attr("fill", "white")
+				// 	.attr("x", function(d, i) {
+				// 	    console.log(xScale.bandwidth());
+				// 	    return xScale.bandwidth() * i + xScale.bandwidth();
+				// 	})
+				// 	.attr("y", function(d) {
+				// 		console.log(d.Success);
+				// 	    return yScale(d.Success)+yTextPadding;
+				// 	})
+				// 	.text(function(d){
+				// 	     return d.Success;
+				// 	});
+				// bartext.exit().remove();
 
 				
 
@@ -359,6 +360,12 @@ var StackedBarChart = function() {
 	chart.xAxisTitle = function(val) {
 		if(!arguments.length) return xAxisTitle;
 		xAxisTitle = val;
+		return chart;
+	};
+
+	chart.label = function(val) {
+		if(!arguments.length) return xAxisTitle;
+		label = val;
 		return chart;
 	};
 
